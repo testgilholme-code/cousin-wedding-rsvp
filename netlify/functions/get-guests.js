@@ -35,7 +35,7 @@ exports.handler = async (event, context) => {
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
-      range: 'Sheet1!A:B',
+      range: 'RSVP List!A:B',
     });
 
     const rows = response.data.values;
