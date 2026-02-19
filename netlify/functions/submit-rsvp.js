@@ -36,7 +36,7 @@ exports.handler = async (event, context) => {
 
     const readResponse = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
-      range: 'Sheet1!A:G',
+      range: 'RSVP List!A:G',
     });
 
     const rows = readResponse.data.values || [];
@@ -63,7 +63,7 @@ exports.handler = async (event, context) => {
       const status = response.attending ? 'Attending' : 'Not Attending';
       
       updates.push({
-        range: `Sheet1!C${rowNum}:G${rowNum}`,
+        range: `RSVP List!C${rowNum}:G${rowNum}`,
         values: [[
           status,
           response.dietary || '',
